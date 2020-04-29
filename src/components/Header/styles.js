@@ -7,7 +7,7 @@ export const Container = styled.header`
   align-items: center;
   margin: 50px 0;
   img {
-    height: 50px;
+    height: 60px;
   }
 `;
 export const Cart = styled(Link)`
