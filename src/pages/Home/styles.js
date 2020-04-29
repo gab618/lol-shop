@@ -3,9 +3,21 @@ import { darken } from 'polished';
 
 export const ProductList = styled.ul`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
   list-style: none;
+
+  @media screen and (max-width: 992px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: 480px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 
   li {
     display: flex;
@@ -16,8 +28,9 @@ export const ProductList = styled.ul`
 
     img {
       align-self: center;
-      width: 200px;
+      width: 120px;
       border-radius: 4px;
+      margin-bottom: 10px;
     }
 
     > strong {
@@ -64,6 +77,7 @@ export const ProductList = styled.ul`
         flex: 1;
         text-align: center;
         font-weight: bold;
+        padding: 0 5px;
       }
     }
   }
