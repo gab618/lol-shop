@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import {
   MdRemoveCircleOutline,
@@ -7,7 +8,7 @@ import {
 } from 'react-icons/md';
 import { Container, ProductTable, Total } from './styles';
 
-export default function Cart() {
+function Cart({ cart }) {
   return (
     <Container>
       <ProductTable>
@@ -21,68 +22,36 @@ export default function Cart() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>
-              <img
-                src="https://vignette.wikia.nocookie.net/leagueoflegends/images/3/3d/Trinity_Force_item.png/revision/latest?cb=20171222001255"
-                alt="Trinity Force"
-              />
-            </td>
-            <td>
-              <strong>Trinity Force</strong>
-              <span>3733</span>
-            </td>
-            <td>
-              <div>
+          {cart.map((product) => (
+            <tr>
+              <td>
+                <img src={product.image} alt={product.title} />
+              </td>
+              <td>
+                <strong>{product.title}</strong>
+                <span>{product.price}</span>
+              </td>
+              <td>
+                <div>
+                  <button type="button">
+                    <MdRemoveCircleOutline size={20} color="#24494b" />
+                  </button>
+                  <input type="number" readOnly value={product.amount} />
+                  <button type="button">
+                    <MdAddCircleOutline size={20} color="#24494b" />
+                  </button>
+                </div>
+              </td>
+              <td>
+                <strong>7466</strong>
+              </td>
+              <td>
                 <button type="button">
-                  <MdRemoveCircleOutline size={20} color="#24494b" />
+                  <MdDelete size={20} color="#24494b" />
                 </button>
-                <input type="number" readOnly value={2} />
-                <button type="button">
-                  <MdAddCircleOutline size={20} color="#24494b" />
-                </button>
-              </div>
-            </td>
-            <td>
-              <strong>7466</strong>
-            </td>
-            <td>
-              <button type="button">
-                <MdDelete size={20} color="#24494b" />
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <img
-                src="https://vignette.wikia.nocookie.net/leagueoflegends/images/3/3d/Trinity_Force_item.png/revision/latest?cb=20171222001255"
-                alt="Trinity Force"
-              />
-            </td>
-            <td>
-              <strong>Trinity Force</strong>
-              <span>3733</span>
-            </td>
-            <td>
-              <div>
-                <button type="button">
-                  <MdRemoveCircleOutline size={20} color="#24494b" />
-                </button>
-                <input type="number" readOnly value={2} />
-                <button type="button">
-                  <MdAddCircleOutline size={20} color="#24494b" />
-                </button>
-              </div>
-            </td>
-            <td>
-              <strong>7466</strong>
-            </td>
-            <td>
-              <button type="button">
-                <MdDelete size={20} color="#24494b" />
-              </button>
-            </td>
-          </tr>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </ProductTable>
       <footer>
@@ -95,3 +64,9 @@ export default function Cart() {
     </Container>
   );
 }
+
+const mapStateToProps = (state) => ({
+  cart: state.cart,
+});
+
+export default connect(mapStateToProps)(Cart);
