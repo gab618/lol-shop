@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:3333',
+  baseURL: 'http://knuckles4x.pythonanywhere.com/lolshop',
 });
 
 export default api;
