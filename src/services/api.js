@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://knuckles4x.pythonanywhere.com/lolshop',
+  baseURL: `${process.env.REACT_APP_API_ADDRESS}`,
 });
 
 export default api;
