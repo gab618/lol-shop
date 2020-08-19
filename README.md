@@ -2,10 +2,10 @@
 <br />
 <p align="center">
   <a href="https://github.com/gab618/lol-shop">
-    <img https://lolshop.netlify.app/static/media/logo.61b525b2.png alt="Logo" height="80">
+    <img src="https://lolshop.netlify.app/static/media/logo.61b525b2.png" alt="Logo" height="80">
   </a>
 
-  <h1 align="center">LolSho</h1>
+  <h1 align="center">LolShop</h1>
 
   <p align="center">
     League of Legends items ecommerce (front-end only) !
@@ -70,4 +70,4 @@ Gabriel - [@ezrealblindado](https://twitter.com/ezrealblindado) - gabrielrocha19
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[product-screenshot]: images/screenshot.gif
+[product-screenshot]: https://media.giphy.com/media/Us4bHYYltM0CDYbcYc/giphy.gif
