@@ -21,7 +21,7 @@
 
 ## Sobre o projeto
 
-[![GitHub Clone Screenshot][product-screenshot]](https://github-clone-ezrealblindado.netlify.app/)
+[![GitHub Clone Screenshot][product-screenshot]](https://lolshop.netlify.app/)
 
 Front-end de ecommerce que possui como produtos alguns itens do League of Legends. O objetivo do projeto foi aplicar os conhecimentos de redux e redux-saga dentro do React.
 
